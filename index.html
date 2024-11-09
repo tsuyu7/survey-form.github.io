@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Survey Form</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: #000000;
+            color: #f5f6f7;
+            font-family: "Segoe UI", "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+            font-size: 16px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 600px;
+            background-color: #1c1c1e;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+        }
+
+        h1, p {
+            text-align: center;
+            margin: 1em 0;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #007aff;
+            background-image: linear-gradient(to right, #007aff, #ff2d55, #ffcc00, #ff2d55);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        form {
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        fieldset {
+            border: none;
+            padding: 20px;
+            border-bottom: 2px solid #8e8e93;
+            margin-bottom: 20px;
+        }
+
+        legend {
+            font-size: 1.2rem;
+            color: #8e8e93;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #8e8e93;
+            border-radius: 5px;
+            background-color: #000000;
+            color: #ffffff;
+            font-size: 1rem;
+        }
+
+        input[type="radio"], input[type="checkbox"] {
+            width: auto;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+
+        .inline {
+            display: inline-block;
+            margin: 5px 0;
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            padding: 15px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #ffffff;
+            background-color: #007aff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #005bb5;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1 id="title">Survey Form</h1>
+    <p id="description">Please take a few minutes to answer the questions below. Your responses will help us improve our services.</p>
+    <form id="survey-form" method="post">
+        <fieldset>
+            <div class="form-group">
+                <label id="name-label" for="name">Enter Your Name:</label>
+                <input id="name" name="name" type="text" placeholder="Enter your full name" required />
+            </div>
+            <div class="form-group">
+                <label id="email-label" for="email">Enter Your Email:</label>
+                <input id="email" name="email" type="email" placeholder="Enter your email" required />
+            </div>
+            <div class="form-group">
+                <label id="number-label" for="number">Enter Your Age:</label>
+                <input id="number" name="number" type="number" min="18" max="120" placeholder="Age (18-120)" />
+            </div>
+            <div class="form-group">
+                <label for="dropdown">Select Your Country:</label>
+                <select id="dropdown" name="country" required>
+                    <option value="">Select a country</option>
+                    <option value="USA">USA</option>
+                    <option value="Canada">Canada</option>
+                    <option value="UK">UK</option>
+                    <option value="Australia">Australia</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Experience with Our Services</legend>
+            <label><input type="radio" name="experience" value="very-satisfied" class="inline" checked /> Very Satisfied</label>
+            <label><input type="radio" name="experience" value="satisfied" class="inline" /> Satisfied</label>
+            <label><input type="radio" name="experience" value="neutral" class="inline" /> Neutral</label>
+            <label><input type="radio" name="experience" value="dissatisfied" class="inline" /> Dissatisfied</label>
+            <label><input type="radio" name="experience" value="very-dissatisfied" class="inline" /> Very Dissatisfied</label>
+        </fieldset>
+        <fieldset>
+            <legend>Quality of Products/Services</legend>
+            <label><input type="radio" name="quality" value="excellent" class="inline" checked /> Excellent</label>
+            <label><input type="radio" name="quality" value="good" class="inline" /> Good</label>
+            <label><input type="radio" name="quality" value="average" class="inline" /> Average</label>
+            <label><input type="radio" name="quality" value="poor" class="inline" /> Poor</label>
+        </fieldset>
+        <fieldset>
+            <legend>Recommendation Likelihood</legend>
+            <label><input type="radio" name="recommendation" value="very-likely" class="inline" checked /> Very Likely</label>
+            <label><input type="radio" name="recommendation" value="likely" class="inline" /> Likely</label>
+            <label><input type="radio" name="recommendation" value="neutral" class="inline" /> Neutral</label>
+            <label><input type="radio" name="recommendation" value="unlikely" class="inline" /> Unlikely</label>
+            <label><input type="radio" name="recommendation" value="very-unlikely" class="inline" /> Very Unlikely</label>
+        </fieldset>
+        <fieldset>
+            <legend>Services Used</legend>
+            <label><input type="checkbox" name="services" value="service1" class="inline" /> Service 1</label>
+            <label><input type="checkbox" name="services" value="service2" class="inline" /> Service 2</label>
+            <label><input type="checkbox" name="services" value="service3" class="inline" /> Service 3</label>
+            <label><input type="checkbox" name="services" value="service4" class="inline" /> Service 4</label>
+        </fieldset>
+        <fieldset>
+            <legend>Additional Comments</legend>
+            <textarea id="comments" name="comments" rows="4" placeholder="Please share any additional feedback or suggestions here..."></textarea>
+        </fieldset>
+        <button type="submit" id="submit">Submit</button>
+    </form>
+</div>
+
+</body>
+</html>
